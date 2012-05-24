@@ -1,0 +1,3 @@
+eclipse.preferences.version=1
+entryPointModules=org.purewidgets.demos.showcase.Showcase|org.purewidgets.demos.helloworld.HelloWorld|org.purewidgets.demos.test.Test
+filesCopiedToWebInfLib=gwt-servlet.jar
