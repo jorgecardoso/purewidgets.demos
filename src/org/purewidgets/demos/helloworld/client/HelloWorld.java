@@ -1,74 +1,57 @@
 package org.purewidgets.demos.helloworld.client;
 
 
+import java.util.ArrayList;
+
 import org.purewidgets.client.application.PublicDisplayApplication;
 import org.purewidgets.client.application.PublicDisplayApplicationLoadedListener;
-import org.purewidgets.client.widgets.GuiButton;
+import org.purewidgets.client.widgets.GuiListBox;
 import org.purewidgets.shared.events.ActionEvent;
 import org.purewidgets.shared.events.ActionListener;
-import org.purewidgets.shared.widgetmanager.WidgetManager;
-import org.purewidgets.shared.widgets.Application;
-
 import com.google.gwt.core.client.EntryPoint;
-import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.PopupPanel;
 import com.google.gwt.user.client.ui.RootPanel;
 
 public class HelloWorld implements PublicDisplayApplicationLoadedListener, EntryPoint{
 	
 	@Override
 	public void onModuleLoad() {
-		
 		/*
 		 * Give a name to the application and initialize some 
 		 * background processes.
 		 */
-		PublicDisplayApplication.load(this, "HelloWorld", true);
-	
-	
+		PublicDisplayApplication.load(this, "MyHelloWorld", false);
 	}
 
 	@Override
 	public void onApplicationLoaded() {
-		Application app = PublicDisplayApplication.getApplication();
-		if ( "http://www.thetechcheck.com/wp-content/uploads/2011/02/GMail.png" != app.getIconBaseUrl() ) {
-			app.setIconBaseUrl("http://www.thetechcheck.com/wp-content/uploads/2011/02/GMail.png");
-			WidgetManager.get().getServerCommunicator().setApplication(app.getPlaceId(), app.getApplicationId(), app, null);
-			
-		} 
+		
+		ArrayList<String> options = new ArrayList<String>();
+		options.add("To be");
+		options.add("Not to be");
+		GuiListBox listbox = new GuiListBox("listboxId", "To be, or not to be",  options);
+		listbox.setShortDescription("Choose!");
+		
 		
 		/*
-		 * Create a PuReWidgets button with associated graphical 
-		 * representation.
+		 * Register the action listener for the list 
 		 */
-		GuiButton guiButton = new GuiButton("hello-Button", "Hello World");
-		
-		/*
-		 * Give some context information
-		 */
-		guiButton.setShortDescription("Say hello!");
-		guiButton.setLongDescription("Say hello to be greeted by the HelloWorld application");
-		
-		/*
-		 * Register the action listener for the button and show a popup 
-		 * when a user activates it.
-		 */
-		guiButton.addActionListener(new ActionListener() {
+		listbox.addActionListener(new ActionListener() {
 			@Override
 			public void onAction(ActionEvent<?> e) {
+				if ( e.getSelection().getShortDescription().equalsIgnoreCase("to be") ){
+					RootPanel.getBodyElement().getStyle().setBackgroundColor("#ffffff");
+				} else {
+					RootPanel.getBodyElement().getStyle().setBackgroundColor("#000000");
+				}
 				
-				PopupPanel popup = new PopupPanel();
-				popup.add( new Label("Hello " + e.getPersona() + "!") );
-				popup.center();
-				popup.show();
 			}
 		});
 		
 		/*
-		 * Add the graphical representation of the button to the browser
+		 * Add the graphical representation of the listbox to the browser
 		 * window.
 		 */
-		RootPanel.get("main").add(guiButton);
+		RootPanel.get("main").add(listbox);
 		
 	}
 }
