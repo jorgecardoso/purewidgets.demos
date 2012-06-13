@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import org.purewidgets.client.application.PublicDisplayApplication;
 import org.purewidgets.client.application.PublicDisplayApplicationLoadedListener;
 import org.purewidgets.client.widgets.GuiButton;
+import org.purewidgets.client.widgets.GuiCheckin;
 import org.purewidgets.client.widgets.GuiTextBox;
 import org.purewidgets.client.widgets.GuiListBox;
 import org.purewidgets.client.widgets.GuiUpload;
@@ -106,6 +107,11 @@ public class Showcase implements PublicDisplayApplicationLoadedListener, EntryPo
 		GuiUpload guiUpload = new GuiUpload("uploadsomething", "Upload");
 		guiUpload.addActionListener(this);
 		uploadPanel.add(guiUpload);
+		
+		/*
+		 * Checkin
+		 */
+		GuiCheckin checkin = new GuiCheckin();
 		
 //		
 //		GuiDownloadButton download = new GuiDownloadButton("download", "Download", "http://teste");

@@ -15,7 +15,7 @@
 
 	<!-- Other module inherits -->
 	<inherits name="org.purewidgets.PuReWidgets" />
-	<inherits name="org.purewidgets.system.placeinteraction.PlaceInteraction" />
+	
 
 	<set-property name="gwt.logging.enabled" value="TRUE" />
 	<set-property name="gwt.logging.logLevel" value="FINE" />
