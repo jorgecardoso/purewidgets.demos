@@ -89,25 +89,25 @@ public class Test extends HttpServlet implements ApplicationLifeCycle {
 
 	@Override
 	public void onAction(ActionEvent<?> ae) {
-		//ae = (ActionEvent<? extends Widget>)ae;
-		message += " onAction: ";
-		Log.debug(this, ae.toDebugString());
-		Widget source = (Widget)ae.getSource();
-		
-		if ( source.getWidgetId().equals("button_1") ) {
-			this.clicks++;
-			
-			if ( this.clicks > 1 && this.clicks < 3) {
-				TextBox text = new TextBox("txt_1", "Gimme text");
-				app.addWidget(text);
-			}
-		} else if ( source.getWidgetId().equals("txt_1")) {
-			message += ae.getParam() + "\n"; 
-				
-		} else if ( source.getWidgetId().equals("uploadsomething") ) {
-			message += ae.getParam() + "\n"; 
-		}
-		
-		
+//		//ae = (ActionEvent<? extends Widget>)ae;
+//		message += " onAction: ";
+//		Log.debug(this, ae.toDebugString());
+//		Widget source = (Widget)ae.getSource();
+//		
+//		if ( source.getWidgetId().equals("button_1") ) {
+//			this.clicks++;
+//			
+//			if ( this.clicks > 1 && this.clicks < 3) {
+//				TextBox text = new TextBox("txt_1", "Gimme text");
+//				app.addWidget(text);
+//			}
+//		} else if ( source.getWidgetId().equals("txt_1")) {
+//			message += ae.getParam() + "\n"; 
+//				
+//		} else if ( source.getWidgetId().equals("uploadsomething") ) {
+//			message += ae.getParam() + "\n"; 
+//		}
+//		
+//		
 	}
 }

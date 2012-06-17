@@ -67,7 +67,13 @@ public class Showcase implements PublicDisplayApplicationLoadedListener, EntryPo
 		setPanelStyle(buttonPanel);
 		
 		GuiButton like1 = new GuiButton("btn1", "Like");
+		like1.getWidgetOptions().get(0).setSuggestedReferenceCode("myb");
 		like1.setLongDescription("Video of Everdith Landrau at TEDxFranklinStreet");
+		
+		/*
+		 * We made changes that need to be sent to the server
+		 */
+		like1.sendToServer();
 		buttonPanel.add(like1);
 		
 		//GuiButton like2 = new GuiButton("btn2", "Like");

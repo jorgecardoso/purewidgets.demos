@@ -1,16 +1,304 @@
-function test(){var N='',ub='" for "gwt:onLoadErrorFn"',sb='" for "gwt:onPropertyErrorFn"',gb='"><\/script>',X='#',Eb='.cache.html',Z='/',Cb='32A724294B7AD75247C8E0A5350BBB73',Db=':',mb='::',Pb='<script defer="defer">test.onInjectionDone(\'test\')<\/script>',fb='<script id="',Nb='<script language="javascript" src="',pb='=',Y='?',rb='Bad handler "',Lb='DOMContentLoaded',hb='SCRIPT',eb='__gwt_marker_test',ib='base',ab='baseUrl',R='begin',Q='bootstrap',_='clear.cache.gif',ob='content',W='end',S='gwt.codesvr=',T='gwt.hosted=',U='gwt.hybrid',Fb='gwt/standard/standard.css',tb='gwt:onLoadErrorFn',qb='gwt:onPropertyErrorFn',nb='gwt:property',Kb='head',Ab='hosted.html?test',Jb='href',vb='iframe',$='img',wb="javascript:''",Gb='link',zb='loadExternalRefs',jb='meta',yb='moduleRequested',V='moduleStartup',kb='name',xb='position:absolute;width:0;height:0;border:none',Hb='rel',bb='script',Bb='selectingPermutation',P='startup',Ib='stylesheet',Mb='swfobject-2.2.js',Ob='swfobject-2.2.js"><\/script>',O='test',cb='test.nocache.js',lb='test::',db='undefined';var l=window,m=document,n=l.__gwtStatsEvent?function(a){return l.__gwtStatsEvent(a)}:null,o=l.__gwtStatsSessionId?l.__gwtStatsSessionId:null,p,q,r,s=N,t={},u=[],v=[],w=[],x=0,y,z;n&&n({moduleName:O,sessionId:o,subSystem:P,evtGroup:Q,millis:(new Date).getTime(),type:R});if(!l.__gwt_stylesLoaded){l.__gwt_stylesLoaded={}}if(!l.__gwt_scriptsLoaded){l.__gwt_scriptsLoaded={}}function A(){var b=false;try{var c=l.location.search;return (c.indexOf(S)!=-1||(c.indexOf(T)!=-1||l.external&&l.external.gwtOnLoad))&&c.indexOf(U)==-1}catch(a){}A=function(){return b};return b}
-function B(){if(p&&q){var b=m.getElementById(O);var c=b.contentWindow;if(A()){c.__gwt_getProperty=function(a){return F(a)}}test=null;c.gwtOnLoad(y,O,s,x);n&&n({moduleName:O,sessionId:o,subSystem:P,evtGroup:V,millis:(new Date).getTime(),type:W})}}
-function C(){function e(a){var b=a.lastIndexOf(X);if(b==-1){b=a.length}var c=a.indexOf(Y);if(c==-1){c=a.length}var d=a.lastIndexOf(Z,Math.min(c,b));return d>=0?a.substring(0,d+1):N}
-function f(a){if(a.match(/^\w+:\/\//)){}else{var b=m.createElement($);b.src=a+_;a=e(b.src)}return a}
-function g(){var a=E(ab);if(a!=null){return a}return N}
-function h(){var a=m.getElementsByTagName(bb);for(var b=0;b<a.length;++b){if(a[b].src.indexOf(cb)!=-1){return e(a[b].src)}}return N}
-function i(){var a;if(typeof isBodyLoaded==db||!isBodyLoaded()){var b=eb;var c;m.write(fb+b+gb);c=m.getElementById(b);a=c&&c.previousSibling;while(a&&a.tagName!=hb){a=a.previousSibling}if(c){c.parentNode.removeChild(c)}if(a&&a.src){return e(a.src)}}return N}
-function j(){var a=m.getElementsByTagName(ib);if(a.length>0){return a[a.length-1].href}return N}
-var k=g();if(k==N){k=h()}if(k==N){k=i()}if(k==N){k=j()}if(k==N){k=e(m.location.href)}k=f(k);s=k;return k}
-function D(){var b=document.getElementsByTagName(jb);for(var c=0,d=b.length;c<d;++c){var e=b[c],f=e.getAttribute(kb),g;if(f){f=f.replace(lb,N);if(f.indexOf(mb)>=0){continue}if(f==nb){g=e.getAttribute(ob);if(g){var h,i=g.indexOf(pb);if(i>=0){f=g.substring(0,i);h=g.substring(i+1)}else{f=g;h=N}t[f]=h}}else if(f==qb){g=e.getAttribute(ob);if(g){try{z=eval(g)}catch(a){alert(rb+g+sb)}}}else if(f==tb){g=e.getAttribute(ob);if(g){try{y=eval(g)}catch(a){alert(rb+g+ub)}}}}}}
-function E(a){var b=t[a];return b==null?null:b}
-function F(a){var b=v[a](),c=u[a];if(b in c){return b}var d=[];for(var e in c){d[c[e]]=e}if(z){z(a,d,b)}throw null}
-var G;function H(){if(!G){G=true;var a=m.createElement(vb);a.src=wb;a.id=O;a.style.cssText=xb;a.tabIndex=-1;m.body.appendChild(a);n&&n({moduleName:O,sessionId:o,subSystem:P,evtGroup:V,millis:(new Date).getTime(),type:yb});a.contentWindow.location.replace(s+J)}}
-test.onScriptLoad=function(){if(G){q=true;B()}};test.onInjectionDone=function(){p=true;n&&n({moduleName:O,sessionId:o,subSystem:P,evtGroup:zb,millis:(new Date).getTime(),type:W});B()};D();C();var I;var J;if(A()){if(l.external&&(l.external.initModule&&l.external.initModule(O))){l.location.reload();return}J=Ab;I=N}n&&n({moduleName:O,sessionId:o,subSystem:P,evtGroup:Q,millis:(new Date).getTime(),type:Bb});if(!A()){try{I=Cb;var K=I.indexOf(Db);if(K!=-1){x=Number(I.substring(K+1));I=I.substring(0,K)}J=I+Eb}catch(a){return}}var L;function M(){if(!r){r=true;if(!__gwt_stylesLoaded[Fb]){var a=m.createElement(Gb);__gwt_stylesLoaded[Fb]=a;a.setAttribute(Hb,Ib);a.setAttribute(Jb,s+Fb);m.getElementsByTagName(Kb)[0].appendChild(a)}B();if(m.removeEventListener){m.removeEventListener(Lb,M,false)}if(L){clearInterval(L)}}}
-if(m.addEventListener){m.addEventListener(Lb,function(){H();M()},false)}var L=setInterval(function(){if(/loaded|complete/.test(m.readyState)){H();M()}},50);n&&n({moduleName:O,sessionId:o,subSystem:P,evtGroup:Q,millis:(new Date).getTime(),type:W});n&&n({moduleName:O,sessionId:o,subSystem:P,evtGroup:zb,millis:(new Date).getTime(),type:R});if(!__gwt_scriptsLoaded[Mb]){__gwt_scriptsLoaded[Mb]=true;document.write(Nb+s+Ob)}m.write(Pb)}
+function test(){
+  var $intern_0 = '', $intern_35 = '" for "gwt:onLoadErrorFn"', $intern_33 = '" for "gwt:onPropertyErrorFn"', $intern_21 = '"><\/script>', $intern_10 = '#', $intern_45 = '.cache.html', $intern_12 = '/', $intern_43 = '77EA07E973F1E09235B0877337318909', $intern_44 = ':', $intern_27 = '::', $intern_56 = '<script defer="defer">test.onInjectionDone(\'test\')<\/script>', $intern_20 = '<script id="', $intern_54 = '<script language="javascript" src="', $intern_30 = '=', $intern_11 = '?', $intern_32 = 'Bad handler "', $intern_52 = 'DOMContentLoaded', $intern_22 = 'SCRIPT', $intern_19 = '__gwt_marker_test', $intern_23 = 'base', $intern_15 = 'baseUrl', $intern_4 = 'begin', $intern_3 = 'bootstrap', $intern_14 = 'clear.cache.gif', $intern_29 = 'content', $intern_9 = 'end', $intern_5 = 'gwt.codesvr=', $intern_6 = 'gwt.hosted=', $intern_7 = 'gwt.hybrid', $intern_46 = 'gwt/standard/standard.css', $intern_34 = 'gwt:onLoadErrorFn', $intern_31 = 'gwt:onPropertyErrorFn', $intern_28 = 'gwt:property', $intern_51 = 'head', $intern_41 = 'hosted.html?test', $intern_50 = 'href', $intern_36 = 'iframe', $intern_13 = 'img', $intern_37 = "javascript:''", $intern_47 = 'link', $intern_40 = 'loadExternalRefs', $intern_24 = 'meta', $intern_39 = 'moduleRequested', $intern_8 = 'moduleStartup', $intern_25 = 'name', $intern_38 = 'position:absolute;width:0;height:0;border:none', $intern_48 = 'rel', $intern_16 = 'script', $intern_42 = 'selectingPermutation', $intern_2 = 'startup', $intern_49 = 'stylesheet', $intern_53 = 'swfobject-2.2.js', $intern_55 = 'swfobject-2.2.js"><\/script>', $intern_1 = 'test', $intern_17 = 'test.nocache.js', $intern_26 = 'test::', $intern_18 = 'undefined';
+  var $wnd = window, $doc = document, $stats = $wnd.__gwtStatsEvent?function(a){
+    return $wnd.__gwtStatsEvent(a);
+  }
+  :null, $sessionId = $wnd.__gwtStatsSessionId?$wnd.__gwtStatsSessionId:null, scriptsDone, loadDone, bodyDone, base = $intern_0, metaProps = {}, values = [], providers = [], answers = [], softPermutationId = 0, onLoadErrorFunc, propertyErrorFunc;
+  $stats && $stats({moduleName:$intern_1, sessionId:$sessionId, subSystem:$intern_2, evtGroup:$intern_3, millis:(new Date).getTime(), type:$intern_4});
+  if (!$wnd.__gwt_stylesLoaded) {
+    $wnd.__gwt_stylesLoaded = {};
+  }
+  if (!$wnd.__gwt_scriptsLoaded) {
+    $wnd.__gwt_scriptsLoaded = {};
+  }
+  function isHostedMode(){
+    var result = false;
+    try {
+      var query = $wnd.location.search;
+      return (query.indexOf($intern_5) != -1 || (query.indexOf($intern_6) != -1 || $wnd.external && $wnd.external.gwtOnLoad)) && query.indexOf($intern_7) == -1;
+    }
+     catch (e) {
+    }
+    isHostedMode = function(){
+      return result;
+    }
+    ;
+    return result;
+  }
+
+  function maybeStartModule(){
+    if (scriptsDone && loadDone) {
+      var iframe = $doc.getElementById($intern_1);
+      var frameWnd = iframe.contentWindow;
+      if (isHostedMode()) {
+        frameWnd.__gwt_getProperty = function(name){
+          return computePropValue(name);
+        }
+        ;
+      }
+      test = null;
+      frameWnd.gwtOnLoad(onLoadErrorFunc, $intern_1, base, softPermutationId);
+      $stats && $stats({moduleName:$intern_1, sessionId:$sessionId, subSystem:$intern_2, evtGroup:$intern_8, millis:(new Date).getTime(), type:$intern_9});
+    }
+  }
+
+  function computeScriptBase(){
+    function getDirectoryOfFile(path){
+      var hashIndex = path.lastIndexOf($intern_10);
+      if (hashIndex == -1) {
+        hashIndex = path.length;
+      }
+      var queryIndex = path.indexOf($intern_11);
+      if (queryIndex == -1) {
+        queryIndex = path.length;
+      }
+      var slashIndex = path.lastIndexOf($intern_12, Math.min(queryIndex, hashIndex));
+      return slashIndex >= 0?path.substring(0, slashIndex + 1):$intern_0;
+    }
+
+    function ensureAbsoluteUrl(url){
+      if (url.match(/^\w+:\/\//)) {
+      }
+       else {
+        var img = $doc.createElement($intern_13);
+        img.src = url + $intern_14;
+        url = getDirectoryOfFile(img.src);
+      }
+      return url;
+    }
+
+    function tryMetaTag(){
+      var metaVal = __gwt_getMetaProperty($intern_15);
+      if (metaVal != null) {
+        return metaVal;
+      }
+      return $intern_0;
+    }
+
+    function tryNocacheJsTag(){
+      var scriptTags = $doc.getElementsByTagName($intern_16);
+      for (var i = 0; i < scriptTags.length; ++i) {
+        if (scriptTags[i].src.indexOf($intern_17) != -1) {
+          return getDirectoryOfFile(scriptTags[i].src);
+        }
+      }
+      return $intern_0;
+    }
+
+    function tryMarkerScript(){
+      var thisScript;
+      if (typeof isBodyLoaded == $intern_18 || !isBodyLoaded()) {
+        var markerId = $intern_19;
+        var markerScript;
+        $doc.write($intern_20 + markerId + $intern_21);
+        markerScript = $doc.getElementById(markerId);
+        thisScript = markerScript && markerScript.previousSibling;
+        while (thisScript && thisScript.tagName != $intern_22) {
+          thisScript = thisScript.previousSibling;
+        }
+        if (markerScript) {
+          markerScript.parentNode.removeChild(markerScript);
+        }
+        if (thisScript && thisScript.src) {
+          return getDirectoryOfFile(thisScript.src);
+        }
+      }
+      return $intern_0;
+    }
+
+    function tryBaseTag(){
+      var baseElements = $doc.getElementsByTagName($intern_23);
+      if (baseElements.length > 0) {
+        return baseElements[baseElements.length - 1].href;
+      }
+      return $intern_0;
+    }
+
+    var tempBase = tryMetaTag();
+    if (tempBase == $intern_0) {
+      tempBase = tryNocacheJsTag();
+    }
+    if (tempBase == $intern_0) {
+      tempBase = tryMarkerScript();
+    }
+    if (tempBase == $intern_0) {
+      tempBase = tryBaseTag();
+    }
+    if (tempBase == $intern_0) {
+      tempBase = getDirectoryOfFile($doc.location.href);
+    }
+    tempBase = ensureAbsoluteUrl(tempBase);
+    base = tempBase;
+    return tempBase;
+  }
+
+  function processMetas(){
+    var metas = document.getElementsByTagName($intern_24);
+    for (var i = 0, n = metas.length; i < n; ++i) {
+      var meta = metas[i], name = meta.getAttribute($intern_25), content;
+      if (name) {
+        name = name.replace($intern_26, $intern_0);
+        if (name.indexOf($intern_27) >= 0) {
+          continue;
+        }
+        if (name == $intern_28) {
+          content = meta.getAttribute($intern_29);
+          if (content) {
+            var value, eq = content.indexOf($intern_30);
+            if (eq >= 0) {
+              name = content.substring(0, eq);
+              value = content.substring(eq + 1);
+            }
+             else {
+              name = content;
+              value = $intern_0;
+            }
+            metaProps[name] = value;
+          }
+        }
+         else if (name == $intern_31) {
+          content = meta.getAttribute($intern_29);
+          if (content) {
+            try {
+              propertyErrorFunc = eval(content);
+            }
+             catch (e) {
+              alert($intern_32 + content + $intern_33);
+            }
+          }
+        }
+         else if (name == $intern_34) {
+          content = meta.getAttribute($intern_29);
+          if (content) {
+            try {
+              onLoadErrorFunc = eval(content);
+            }
+             catch (e) {
+              alert($intern_32 + content + $intern_35);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  function __gwt_getMetaProperty(name){
+    var value = metaProps[name];
+    return value == null?null:value;
+  }
+
+  function computePropValue(propName){
+    var value = providers[propName](), allowedValuesMap = values[propName];
+    if (value in allowedValuesMap) {
+      return value;
+    }
+    var allowedValuesList = [];
+    for (var k in allowedValuesMap) {
+      allowedValuesList[allowedValuesMap[k]] = k;
+    }
+    if (propertyErrorFunc) {
+      propertyErrorFunc(propName, allowedValuesList, value);
+    }
+    throw null;
+  }
+
+  var frameInjected;
+  function maybeInjectFrame(){
+    if (!frameInjected) {
+      frameInjected = true;
+      var iframe = $doc.createElement($intern_36);
+      iframe.src = $intern_37;
+      iframe.id = $intern_1;
+      iframe.style.cssText = $intern_38;
+      iframe.tabIndex = -1;
+      $doc.body.appendChild(iframe);
+      $stats && $stats({moduleName:$intern_1, sessionId:$sessionId, subSystem:$intern_2, evtGroup:$intern_8, millis:(new Date).getTime(), type:$intern_39});
+      iframe.contentWindow.location.replace(base + initialHtml);
+    }
+  }
+
+  test.onScriptLoad = function(){
+    if (frameInjected) {
+      loadDone = true;
+      maybeStartModule();
+    }
+  }
+  ;
+  test.onInjectionDone = function(){
+    scriptsDone = true;
+    $stats && $stats({moduleName:$intern_1, sessionId:$sessionId, subSystem:$intern_2, evtGroup:$intern_40, millis:(new Date).getTime(), type:$intern_9});
+    maybeStartModule();
+  }
+  ;
+  processMetas();
+  computeScriptBase();
+  var strongName;
+  var initialHtml;
+  if (isHostedMode()) {
+    if ($wnd.external && ($wnd.external.initModule && $wnd.external.initModule($intern_1))) {
+      $wnd.location.reload();
+      return;
+    }
+    initialHtml = $intern_41;
+    strongName = $intern_0;
+  }
+  $stats && $stats({moduleName:$intern_1, sessionId:$sessionId, subSystem:$intern_2, evtGroup:$intern_3, millis:(new Date).getTime(), type:$intern_42});
+  if (!isHostedMode()) {
+    try {
+      strongName = $intern_43;
+      var idx = strongName.indexOf($intern_44);
+      if (idx != -1) {
+        softPermutationId = Number(strongName.substring(idx + 1));
+        strongName = strongName.substring(0, idx);
+      }
+      initialHtml = strongName + $intern_45;
+    }
+     catch (e) {
+      return;
+    }
+  }
+  var onBodyDoneTimerId;
+  function onBodyDone(){
+    if (!bodyDone) {
+      bodyDone = true;
+      if (!__gwt_stylesLoaded[$intern_46]) {
+        var l = $doc.createElement($intern_47);
+        __gwt_stylesLoaded[$intern_46] = l;
+        l.setAttribute($intern_48, $intern_49);
+        l.setAttribute($intern_50, base + $intern_46);
+        $doc.getElementsByTagName($intern_51)[0].appendChild(l);
+      }
+      maybeStartModule();
+      if ($doc.removeEventListener) {
+        $doc.removeEventListener($intern_52, onBodyDone, false);
+      }
+      if (onBodyDoneTimerId) {
+        clearInterval(onBodyDoneTimerId);
+      }
+    }
+  }
+
+  if ($doc.addEventListener) {
+    $doc.addEventListener($intern_52, function(){
+      maybeInjectFrame();
+      onBodyDone();
+    }
+    , false);
+  }
+  var onBodyDoneTimerId = setInterval(function(){
+    if (/loaded|complete/.test($doc.readyState)) {
+      maybeInjectFrame();
+      onBodyDone();
+    }
+  }
+  , 50);
+  $stats && $stats({moduleName:$intern_1, sessionId:$sessionId, subSystem:$intern_2, evtGroup:$intern_3, millis:(new Date).getTime(), type:$intern_9});
+  $stats && $stats({moduleName:$intern_1, sessionId:$sessionId, subSystem:$intern_2, evtGroup:$intern_40, millis:(new Date).getTime(), type:$intern_4});
+  if (!__gwt_scriptsLoaded[$intern_53]) {
+    __gwt_scriptsLoaded[$intern_53] = true;
+    document.write($intern_54 + base + $intern_55);
+  }
+  $doc.write($intern_56);
+}
+
 test();
