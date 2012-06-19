@@ -9,6 +9,7 @@ import org.purewidgets.client.application.PublicDisplayApplication;
 import org.purewidgets.client.application.PublicDisplayApplicationLoadedListener;
 import org.purewidgets.client.widgets.GuiButton;
 import org.purewidgets.client.widgets.GuiCheckin;
+import org.purewidgets.client.widgets.GuiDownload;
 import org.purewidgets.client.widgets.GuiTextBox;
 import org.purewidgets.client.widgets.GuiListBox;
 import org.purewidgets.client.widgets.GuiUpload;
@@ -36,7 +37,6 @@ public class Showcase implements PublicDisplayApplicationLoadedListener, EntryPo
 	public void onModuleLoad() {
 		
 		PublicDisplayApplication.load(this, "WidgetShowcase", false);
-		
 		
 	}
 
@@ -113,6 +113,16 @@ public class Showcase implements PublicDisplayApplicationLoadedListener, EntryPo
 		GuiUpload guiUpload = new GuiUpload("uploadsomething", "Upload");
 		guiUpload.addActionListener(this);
 		uploadPanel.add(guiUpload);
+		
+		
+		/* download */
+		FlowPanel downloadPanel = new FlowPanel();
+		tabPanel.add(downloadPanel, "Download");
+		this.setPanelStyle(downloadPanel);
+		
+		GuiDownload guiDownload = new GuiDownload("download-id", "Download", "http://jorge");
+		guiDownload.addActionListener(this);
+		downloadPanel.add(guiDownload);
 		
 		/*
 		 * Checkin

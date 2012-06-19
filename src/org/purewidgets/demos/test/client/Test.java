@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.purewidgets.client.application.PublicDisplayApplication;
 import org.purewidgets.client.application.PublicDisplayApplicationLoadedListener;
 import org.purewidgets.client.widgets.GuiButton;
-import org.purewidgets.client.widgets.GuiDownloadButton;
+import org.purewidgets.client.widgets.GuiDownload;
 import org.purewidgets.client.widgets.GuiTextBox;
 import org.purewidgets.client.widgets.GuiListBox;
 import org.purewidgets.client.widgets.GuiUpload;
@@ -85,7 +85,7 @@ public class Test implements PublicDisplayApplicationLoadedListener, EntryPoint,
 		GuiUpload guiUpload = new GuiUpload("uploadsomething", "Upload");
 		guiUpload.addActionListener(this);
 		
-		GuiDownloadButton download = new GuiDownloadButton("download", "Download", "http://teste");
+		GuiDownload download = new GuiDownload("download", "Download", "http://teste");
 		download.setLongDescription("Link to video Sherry Turkle: Connected, but alone?");
 	
 	}
