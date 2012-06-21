@@ -47,11 +47,6 @@ public class Test implements PublicDisplayApplicationLoadedListener, EntryPoint,
 			Admin.run();
 			return;
 		}
-		Application app = PublicDisplayApplication.getApplication();
-		if ( "/test/" != app.getIconBaseUrl() ) {
-			app.setIconBaseUrl("/test/");
-			WidgetManager.get().getServerCommunicator().setApplication(app.getPlaceId(), app.getApplicationId(), app, null);
-		} 
 		
 		WidgetManager.get().setAutomaticInputRequests(true);
 		

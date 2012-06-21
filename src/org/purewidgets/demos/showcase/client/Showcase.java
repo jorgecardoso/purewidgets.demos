@@ -48,11 +48,7 @@ public class Showcase implements PublicDisplayApplicationLoadedListener, EntryPo
 			//Admin.run();
 			return;
 		}
-		Application app = PublicDisplayApplication.getApplication();
-		if ( "/showcase/" != app.getIconBaseUrl() ) {
-			app.setIconBaseUrl("/showcase/");
-			WidgetManager.get().getServerCommunicator().setApplication(app.getPlaceId(), app.getApplicationId(), app, null);
-		} 
+		
 		
 		WidgetManager.get().setAutomaticInputRequests(true);
 		
