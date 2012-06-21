@@ -8,13 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.purewidgets.server.application.PublicDisplayApplication;
 import org.purewidgets.server.application.ApplicationLifeCycle;
-import org.purewidgets.shared.Log;
 import org.purewidgets.shared.events.ActionEvent;
-import org.purewidgets.shared.widgetmanager.WidgetManager;
+import org.purewidgets.shared.logging.Log;
 import org.purewidgets.shared.widgets.ListBox;
 import org.purewidgets.shared.widgets.TextBox;
 import org.purewidgets.shared.widgets.Upload;
-import org.purewidgets.shared.widgets.Widget;
 
 public class Test extends HttpServlet implements ApplicationLifeCycle {
 
@@ -61,22 +59,24 @@ public class Test extends HttpServlet implements ApplicationLifeCycle {
 		l.add("op 1");
 		l.add("op 2");
 		ListBox list = new ListBox("listid", "Lista xpto", l);
+		list.addActionListener(this);
+		this.app.addWidget(list, true);
 		
-		list.sendToServer();
+		//list.sendToServer();
 		Upload upload = new Upload("uploadsomething", "Upload");
 		upload.addActionListener(this);
-		upload.sendToServer();
+		//upload.sendToServer();
 	}
 	
 	@Override
 	public void finish() {
 		Log.debug(this, "Finish");
 
-		for (Widget w : WidgetManager.get().getWidgetList()) {
+		//for (Widget w : WidgetManager.get().getWidgetList()) {
 			
-				message += w.toDebugString() + ";";
+				//message += w.toDebugString() + ";";
 			
-		}
+		//}
 		
 		
 		try {
@@ -89,9 +89,9 @@ public class Test extends HttpServlet implements ApplicationLifeCycle {
 
 	@Override
 	public void onAction(ActionEvent<?> ae) {
-//		//ae = (ActionEvent<? extends Widget>)ae;
-//		message += " onAction: ";
-//		Log.debug(this, ae.toDebugString());
+		//ae = (ActionEvent<? extends Widget>)ae;
+		message += " onAction: ";
+		Log.debug(this, ae.toString());
 //		Widget source = (Widget)ae.getSource();
 //		
 //		if ( source.getWidgetId().equals("button_1") ) {
@@ -107,7 +107,7 @@ public class Test extends HttpServlet implements ApplicationLifeCycle {
 //		} else if ( source.getWidgetId().equals("uploadsomething") ) {
 //			message += ae.getParam() + "\n"; 
 //		}
-//		
-//		
+		
+		
 	}
 }

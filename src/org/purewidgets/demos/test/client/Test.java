@@ -7,16 +7,17 @@ import java.util.ArrayList;
 
 import org.purewidgets.client.application.PublicDisplayApplication;
 import org.purewidgets.client.application.PublicDisplayApplicationLoadedListener;
+import org.purewidgets.client.im.WidgetManager;
 import org.purewidgets.client.widgets.GuiButton;
 import org.purewidgets.client.widgets.GuiDownload;
 import org.purewidgets.client.widgets.GuiTextBox;
 import org.purewidgets.client.widgets.GuiListBox;
 import org.purewidgets.client.widgets.GuiUpload;
-import org.purewidgets.shared.Log;
 import org.purewidgets.shared.events.ActionEvent;
 import org.purewidgets.shared.events.ActionListener;
-import org.purewidgets.shared.widgetmanager.WidgetManager;
-import org.purewidgets.shared.widgets.Application;
+import org.purewidgets.shared.im.Application;
+import org.purewidgets.shared.logging.Log;
+
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Image;

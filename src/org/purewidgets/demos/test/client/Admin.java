@@ -7,7 +7,8 @@ import java.util.ArrayList;
 
 import org.purewidgets.client.application.PublicDisplayApplication;
 import org.purewidgets.client.storage.RemoteStorage;
-import org.purewidgets.shared.Log;
+import org.purewidgets.shared.logging.Log;
+
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.rpc.AsyncCallback;

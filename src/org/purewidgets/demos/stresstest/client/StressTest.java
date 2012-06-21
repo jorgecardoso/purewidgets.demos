@@ -10,7 +10,7 @@ import org.purewidgets.client.application.PublicDisplayApplication;
 import org.purewidgets.client.application.PublicDisplayApplicationLoadedListener;
 import org.purewidgets.client.widgets.GuiButton;
 import org.purewidgets.client.widgets.GuiWidget;
-import org.purewidgets.shared.Log;
+import org.purewidgets.shared.logging.Log;
 
 //
 //import org.jorgecardoso.purewidgets.demo.placeinteraction.client.SightingService;
@@ -96,7 +96,6 @@ public class StressTest implements PublicDisplayApplicationLoadedListener, Entry
 			
 			GuiButton b = new GuiButton("button "+widgetIdIndex, "Button "+widgetIdIndex);
 			b.setShortDescription("Test button " + widgetIdIndex);
-			b.setVolatile(true);
 			widgetIdIndex++;
 			
 			widgets.add(b);
