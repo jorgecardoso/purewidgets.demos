@@ -1,12 +1,10 @@
 package org.purewidgets.demos.test.client;
 
 
-
-
 import java.util.ArrayList;
 
-import org.purewidgets.client.application.PublicDisplayApplication;
-import org.purewidgets.client.application.PublicDisplayApplicationLoadedListener;
+import org.purewidgets.client.application.PDApplication;
+import org.purewidgets.client.application.PDApplicationLifeCycle;
 import org.purewidgets.client.im.WidgetManager;
 import org.purewidgets.client.widgets.GuiButton;
 import org.purewidgets.client.widgets.GuiDownload;
@@ -27,24 +25,28 @@ import com.google.gwt.user.client.ui.RootPanel;
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
-public class Test implements PublicDisplayApplicationLoadedListener, EntryPoint, ActionListener{
+public class Test implements PDApplicationLifeCycle, EntryPoint, ActionListener{
 	
 	String postUrl = "";
 	String uploadId = "";
 	
+	PDApplication pdApplication;
+	
 	@Override
 	public void onModuleLoad() {
 		
-		PublicDisplayApplication.load(this, "Test", false);
+		PDApplication.load(this, "Test");
 		
 		
 	}
 
 	@Override
-	public void onApplicationLoaded() {
+	public void onPDApplicationLoaded(PDApplication pdApplication) {
+		this.pdApplication = pdApplication;
+		
 		String page = Window.Location.getPath();
 		if ( page.contains("admin.html") ) {
-			Admin.run();
+			Admin.run(pdApplication);
 			return;
 		}
 		

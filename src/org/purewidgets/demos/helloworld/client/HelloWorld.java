@@ -3,15 +3,15 @@ package org.purewidgets.demos.helloworld.client;
 
 import java.util.ArrayList;
 
-import org.purewidgets.client.application.PublicDisplayApplication;
-import org.purewidgets.client.application.PublicDisplayApplicationLoadedListener;
+import org.purewidgets.client.application.PDApplication;
+import org.purewidgets.client.application.PDApplicationLifeCycle;
 import org.purewidgets.client.widgets.GuiListBox;
 import org.purewidgets.shared.events.ActionEvent;
 import org.purewidgets.shared.events.ActionListener;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.client.ui.RootPanel;
 
-public class HelloWorld implements PublicDisplayApplicationLoadedListener, EntryPoint{
+public class HelloWorld implements PDApplicationLifeCycle, EntryPoint{
 	
 	@Override
 	public void onModuleLoad() {
@@ -19,11 +19,11 @@ public class HelloWorld implements PublicDisplayApplicationLoadedListener, Entry
 		 * Give a name to the application and initialize some 
 		 * background processes.
 		 */
-		PublicDisplayApplication.load(this, "MyHelloWorld", false);
+		PDApplication.load(this, "MyHelloWorld");
 	}
 
 	@Override
-	public void onApplicationLoaded() {
+	public void onPDApplicationLoaded(PDApplication pdApplication) {
 		
 		ArrayList<String> options = new ArrayList<String>();
 		options.add("To be");

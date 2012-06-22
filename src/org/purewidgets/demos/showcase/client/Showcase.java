@@ -1,12 +1,9 @@
 package org.purewidgets.demos.showcase.client;
 
-
-
-
 import java.util.ArrayList;
 
-import org.purewidgets.client.application.PublicDisplayApplication;
-import org.purewidgets.client.application.PublicDisplayApplicationLoadedListener;
+import org.purewidgets.client.application.PDApplication;
+import org.purewidgets.client.application.PDApplicationLifeCycle;
 import org.purewidgets.client.im.WidgetManager;
 import org.purewidgets.client.widgets.GuiButton;
 import org.purewidgets.client.widgets.GuiCheckin;
@@ -16,7 +13,6 @@ import org.purewidgets.client.widgets.GuiListBox;
 import org.purewidgets.client.widgets.GuiUpload;
 import org.purewidgets.shared.events.ActionEvent;
 import org.purewidgets.shared.events.ActionListener;
-import org.purewidgets.shared.im.Application;
 import org.purewidgets.shared.logging.Log;
 
 import com.google.gwt.core.client.EntryPoint;
@@ -31,18 +27,18 @@ import com.google.gwt.user.client.ui.TabPanel;
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
-public class Showcase implements PublicDisplayApplicationLoadedListener, EntryPoint, ActionListener{
+public class Showcase implements PDApplicationLifeCycle, EntryPoint, ActionListener{
 
 	
 	@Override
 	public void onModuleLoad() {
 		
-		PublicDisplayApplication.load(this, "WidgetShowcase", false);
+		PDApplication.load(this, "WidgetShowcase");
 		
 	}
 
 	@Override
-	public void onApplicationLoaded() {
+	public void onPDApplicationLoaded(PDApplication pdApplication) {
 		String page = Window.Location.getPath();
 		if ( page.contains("admin.html") ) {
 			//Admin.run();

@@ -5,7 +5,7 @@ package org.purewidgets.demos.test.client;
 
 import java.util.ArrayList;
 
-import org.purewidgets.client.application.PublicDisplayApplication;
+import org.purewidgets.client.application.PDApplication;
 import org.purewidgets.client.storage.RemoteStorage;
 import org.purewidgets.shared.logging.Log;
 
@@ -31,8 +31,8 @@ public class Admin {
 	
 	static RemoteStorage rs;
 
-	public static void  run() {
-		rs = PublicDisplayApplication.getRemoteStorage();
+	public static void  run(PDApplication pdApplication) {
+		rs = pdApplication.getRemoteStorage();
 		
 		values = new ArrayList<TextBox>();
 		

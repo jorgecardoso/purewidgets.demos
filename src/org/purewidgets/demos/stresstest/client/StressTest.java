@@ -1,13 +1,10 @@
 package org.purewidgets.demos.stresstest.client;
 
-
-
-
 import java.util.ArrayList;
 import java.util.Date;
 
-import org.purewidgets.client.application.PublicDisplayApplication;
-import org.purewidgets.client.application.PublicDisplayApplicationLoadedListener;
+import org.purewidgets.client.application.PDApplication;
+import org.purewidgets.client.application.PDApplicationLifeCycle;
 import org.purewidgets.client.widgets.GuiButton;
 import org.purewidgets.client.widgets.GuiWidget;
 import org.purewidgets.shared.logging.Log;
@@ -27,7 +24,7 @@ import com.google.gwt.user.client.rpc.ServiceDefTarget;
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
-public class StressTest implements PublicDisplayApplicationLoadedListener, EntryPoint{
+public class StressTest implements PDApplicationLifeCycle, EntryPoint{
 //	public static SightingServiceAsync sightingService;
 	
 	Timer timerAddDelete;
@@ -42,9 +39,7 @@ public class StressTest implements PublicDisplayApplicationLoadedListener, Entry
 		Date d = new Date();
 		String date = DateTimeFormat.getFormat("y-M-d:H:m:s").format(d);
 		
-		PublicDisplayApplication.load(this, "StressTest-" + date, true);
-		
-		
+		PDApplication.load(this, "StressTest-" + date);
 	}
 	
 	private void input() {
@@ -104,14 +99,8 @@ public class StressTest implements PublicDisplayApplicationLoadedListener, Entry
 	}
 
 	@Override
-	public void onApplicationLoaded() {
-		//GuiButton b = new GuiButton("button", "button");
-				//b.setVolatile(true);
-				
-				
-//				sightingService = GWT.create(SightingService.class);
-//				((ServiceDefTarget) sightingService).setServiceEntryPoint("/sighting");
-				
+	public void onPDApplicationLoaded(PDApplication pdApplication) {
+			
 				widgets = new ArrayList<GuiWidget>();
 				
 				widgetIdIndex = 0;
