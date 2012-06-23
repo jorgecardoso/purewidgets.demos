@@ -46,9 +46,9 @@ public class Showcase implements PDApplicationLifeCycle, EntryPoint, ActionListe
 		}
 		
 		
-		WidgetManager.get().setAutomaticInputRequests(true);
+		//WidgetManager.get().setAutomaticInputRequests(true);
 		
-		TabPanel tabPanel = new TabPanel();
+		final TabPanel tabPanel = new TabPanel();
 		
 		tabPanel.addStyleName("main");
 		RootPanel.get().add(tabPanel);
@@ -62,7 +62,21 @@ public class Showcase implements PDApplicationLifeCycle, EntryPoint, ActionListe
 		GuiButton like1 = new GuiButton("btn1", "Like");
 		like1.getWidgetOptions().get(0).setSuggestedReferenceCode("myb");
 		like1.setLongDescription("Video of Everdith Landrau at TEDxFranklinStreet");
-		
+		like1.addActionListener(new ActionListener() {
+
+			@Override
+			public void onAction(ActionEvent<?> e) {
+				/* Textbox */
+				FlowPanel textboxPanel = new FlowPanel();
+				tabPanel.add(textboxPanel, "TextBox");
+				Showcase.this.setPanelStyle(textboxPanel);
+				
+				GuiTextBox tb1 = new GuiTextBox("txt1", "Send text");
+				tb1.setWidth("400px");
+				tb1.setLongDescription("Contribute some tags to the tag cloud.");
+				textboxPanel.add(tb1);
+				
+			}});
 		/*
 		 * We made changes that need to be sent to the server
 		 */
@@ -72,15 +86,7 @@ public class Showcase implements PDApplicationLifeCycle, EntryPoint, ActionListe
 		//GuiButton like2 = new GuiButton("btn2", "Like");
 		//like1.setLongDescription("Video of Sherry Turkle: Connected, but alone?");
 		
-		/* Textbox */
-		FlowPanel textboxPanel = new FlowPanel();
-		tabPanel.add(textboxPanel, "TextBox");
-		this.setPanelStyle(textboxPanel);
 		
-		GuiTextBox tb1 = new GuiTextBox("txt1", "Send text");
-		tb1.setWidth("400px");
-		tb1.setLongDescription("Contribute some tags to the tag cloud.");
-		textboxPanel.add(tb1);
 		
 		
 		

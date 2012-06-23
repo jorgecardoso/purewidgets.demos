@@ -50,7 +50,7 @@ public class Test implements PDApplicationLifeCycle, EntryPoint, ActionListener{
 			return;
 		}
 		
-		WidgetManager.get().setAutomaticInputRequests(true);
+		//WidgetManager.get().setAutomaticInputRequests(true);
 		
 		
 		GuiButton like1 = new GuiButton("btn1", "Like");
