@@ -12,6 +12,6 @@ java.util.HashMap, true, true, false, false, java.util.HashMap/1797211028, 17972
 java.util.IdentityHashMap, true, true, false, false, java.util.IdentityHashMap/1839153020, 1839153020
 java.util.LinkedHashMap, true, true, false, false, java.util.LinkedHashMap/3008245022, 3008245022
 java.util.TreeMap, true, true, false, false, java.util.TreeMap/1493889780, 1493889780
-org.purewidgets.client.storage.RemoteStorageService, false, false, false, false, _, 373830983
+org.purewidgets.client.storage.ServerStorageService, false, false, false, false, _, 1245238411
 org.purewidgets.shared.widgets.TagCloud$AlphaTagComparator, true, true, false, false, org.purewidgets.shared.widgets.TagCloud$AlphaTagComparator/1262238153, 1262238153
 org.purewidgets.shared.widgets.TagCloud$FrequencyTagComparator, true, true, false, false, org.purewidgets.shared.widgets.TagCloud$FrequencyTagComparator/3962053624, 3962053624

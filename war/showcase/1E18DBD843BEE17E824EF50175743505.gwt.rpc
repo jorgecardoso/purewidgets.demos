@@ -58,6 +58,5 @@ javax.validation.GroupDefinitionException, false, false, true, true, javax.valid
 javax.validation.UnexpectedTypeException, false, false, true, true, javax.validation.UnexpectedTypeException/593026390, 593026390
 javax.validation.ValidationException, false, false, true, true, javax.validation.ValidationException/1570221831, 1570221831
 org.purewidgets.shared.exceptions.HttpServerException, false, false, true, true, org.purewidgets.shared.exceptions.HttpServerException/3334895406, 3334895406
-org.purewidgets.shared.exceptions.InteractionManagerException, false, false, true, true, org.purewidgets.shared.exceptions.InteractionManagerException/4198408911, 4198408911
 org.purewidgets.shared.widgets.TagCloud$AlphaTagComparator, false, false, true, true, org.purewidgets.shared.widgets.TagCloud$AlphaTagComparator/1262238153, 1262238153
 org.purewidgets.shared.widgets.TagCloud$FrequencyTagComparator, false, false, true, true, org.purewidgets.shared.widgets.TagCloud$FrequencyTagComparator/3962053624, 3962053624
