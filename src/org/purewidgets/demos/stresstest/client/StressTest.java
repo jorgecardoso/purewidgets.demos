@@ -6,7 +6,7 @@ import java.util.Date;
 import org.purewidgets.client.application.PDApplication;
 import org.purewidgets.client.application.PDApplicationLifeCycle;
 import org.purewidgets.client.widgets.GuiButton;
-import org.purewidgets.client.widgets.GuiWidget;
+import org.purewidgets.client.widgets.PDWidget;
 import org.purewidgets.shared.logging.Log;
 
 //
@@ -30,7 +30,7 @@ public class StressTest implements PDApplicationLifeCycle, EntryPoint{
 	Timer timerAddDelete;
 	Timer timerInput;
 	
-	ArrayList<GuiWidget> widgets; 
+	ArrayList<PDWidget> widgets; 
 	
 	int widgetIdIndex;
 	
@@ -78,7 +78,7 @@ public class StressTest implements PDApplicationLifeCycle, EntryPoint{
 		/*
 		 * Delete all current widgets
 		 */
-		for ( GuiWidget widget : widgets ) {
+		for ( PDWidget widget : widgets ) {
 			widget.removeFromServer();
 		}
 		
@@ -101,7 +101,7 @@ public class StressTest implements PDApplicationLifeCycle, EntryPoint{
 	@Override
 	public void onPDApplicationLoaded(PDApplication pdApplication) {
 			
-				widgets = new ArrayList<GuiWidget>();
+				widgets = new ArrayList<PDWidget>();
 				
 				widgetIdIndex = 0;
 				
