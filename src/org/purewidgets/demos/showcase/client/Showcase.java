@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import org.purewidgets.client.application.PDApplication;
 import org.purewidgets.client.application.PDApplicationLifeCycle;
 import org.purewidgets.client.im.WidgetManager;
-import org.purewidgets.client.widgets.GuiButton;
-import org.purewidgets.client.widgets.GuiCheckin;
-import org.purewidgets.client.widgets.GuiDownload;
-import org.purewidgets.client.widgets.GuiTextBox;
-import org.purewidgets.client.widgets.GuiListBox;
-import org.purewidgets.client.widgets.GuiUpload;
+import org.purewidgets.client.widgets.PdButton;
+import org.purewidgets.client.widgets.PdCheckin;
+import org.purewidgets.client.widgets.PdDownload;
+import org.purewidgets.client.widgets.PdTextBox;
+import org.purewidgets.client.widgets.PdListBox;
+import org.purewidgets.client.widgets.PdUpload;
 import org.purewidgets.shared.events.ActionEvent;
 import org.purewidgets.shared.events.ActionListener;
 import org.purewidgets.shared.logging.Log;
@@ -59,7 +59,7 @@ public class Showcase implements PDApplicationLifeCycle, EntryPoint, ActionListe
 		tabPanel.add(buttonPanel, "Button");
 		setPanelStyle(buttonPanel);
 		
-		GuiButton like1 = new GuiButton("btn1", "Like");
+		PdButton like1 = new PdButton("btn1", "Like");
 		like1.getWidgetOptions().get(0).setSuggestedReferenceCode("myb");
 		like1.setLongDescription("Video of Everdith Landrau at TEDxFranklinStreet");
 		like1.addActionListener(new ActionListener() {
@@ -71,7 +71,7 @@ public class Showcase implements PDApplicationLifeCycle, EntryPoint, ActionListe
 				tabPanel.add(textboxPanel, "TextBox");
 				Showcase.this.setPanelStyle(textboxPanel);
 				
-				GuiTextBox tb1 = new GuiTextBox("txt1", "Send text");
+				PdTextBox tb1 = new PdTextBox("txt1", "Send text");
 				tb1.setWidth("400px");
 				tb1.setLongDescription("Contribute some tags to the tag cloud.");
 				textboxPanel.add(tb1);
@@ -99,7 +99,7 @@ public class Showcase implements PDApplicationLifeCycle, EntryPoint, ActionListe
 		l.add("I don't go");
 		l.add("Once a week");
 		l.add("Twice a week");
-		GuiListBox lb1 = new GuiListBox("poll-1", "On average, how many times to you go to the movies?", l);
+		PdListBox lb1 = new PdListBox("poll-1", "On average, how many times to you go to the movies?", l);
 		lb1.setShortDescription("Vote");
 		lb1.setLongDescription("On average, how many times to you go to the movies?");
 		listboxPanel.add(lb1);
@@ -109,7 +109,7 @@ public class Showcase implements PDApplicationLifeCycle, EntryPoint, ActionListe
 		tabPanel.add(uploadPanel, "Upload");
 		this.setPanelStyle(uploadPanel);
 		
-		GuiUpload guiUpload = new GuiUpload("uploadsomething", "Upload");
+		PdUpload guiUpload = new PdUpload("uploadsomething", "Upload");
 		guiUpload.addActionListener(this);
 		uploadPanel.add(guiUpload);
 		
@@ -119,14 +119,14 @@ public class Showcase implements PDApplicationLifeCycle, EntryPoint, ActionListe
 		tabPanel.add(downloadPanel, "Download");
 		this.setPanelStyle(downloadPanel);
 		
-		GuiDownload guiDownload = new GuiDownload("download-id", "Download", "http://jorge");
+		PdDownload guiDownload = new PdDownload("download-id", "Download", "http://jorge");
 		guiDownload.addActionListener(this);
 		downloadPanel.add(guiDownload);
 		
 		/*
 		 * Checkin
 		 */
-		GuiCheckin checkin = new GuiCheckin();
+		PdCheckin checkin = new PdCheckin();
 		
 //		
 //		GuiDownloadButton download = new GuiDownloadButton("download", "Download", "http://teste");

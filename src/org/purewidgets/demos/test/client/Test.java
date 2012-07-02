@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import org.purewidgets.client.application.PDApplication;
 import org.purewidgets.client.application.PDApplicationLifeCycle;
 import org.purewidgets.client.im.WidgetManager;
-import org.purewidgets.client.widgets.GuiButton;
-import org.purewidgets.client.widgets.GuiDownload;
-import org.purewidgets.client.widgets.GuiTextBox;
-import org.purewidgets.client.widgets.GuiListBox;
-import org.purewidgets.client.widgets.GuiUpload;
+import org.purewidgets.client.widgets.PdButton;
+import org.purewidgets.client.widgets.PdDownload;
+import org.purewidgets.client.widgets.PdTextBox;
+import org.purewidgets.client.widgets.PdListBox;
+import org.purewidgets.client.widgets.PdUpload;
 import org.purewidgets.shared.events.ActionEvent;
 import org.purewidgets.shared.events.ActionListener;
 import org.purewidgets.shared.im.Application;
@@ -53,20 +53,20 @@ public class Test implements PDApplicationLifeCycle, EntryPoint, ActionListener{
 		//WidgetManager.get().setAutomaticInputRequests(true);
 		
 		
-		GuiButton like1 = new GuiButton("btn1", "Like");
+		PdButton like1 = new PdButton("btn1", "Like");
 		like1.setLongDescription("Video of Everdith Landrau at TEDxFranklinStreet");
 		
-		GuiButton like2 = new GuiButton("btn2", "Like");
+		PdButton like2 = new PdButton("btn2", "Like");
 		like1.setLongDescription("Video of Sherry Turkle: Connected, but alone?");
 		
-		GuiTextBox tb1 = new GuiTextBox("txt1", "Send text");
+		PdTextBox tb1 = new PdTextBox("txt1", "Send text");
 		tb1.setLongDescription("Contribute some tags to the tag cloud.");
 		
 		ArrayList<String> l = new ArrayList<String>();
 		l.add("I don't go");
 		l.add("Once a week");
 		l.add("Twice a week");
-		GuiListBox lb1 = new GuiListBox("poll-1", "On average, how many times to you go to the movies?", l);
+		PdListBox lb1 = new PdListBox("poll-1", "On average, how many times to you go to the movies?", l);
 		lb1.setShortDescription("Vote");
 		lb1.setLongDescription("On average, how many times to you go to the movies?");
 		RootPanel.get("content").add(lb1);
@@ -75,15 +75,15 @@ public class Test implements PDApplicationLifeCycle, EntryPoint, ActionListener{
 		l.add("One");
 		l.add("Two");
 		l.add("Three");
-		GuiListBox lb2 = new GuiListBox("poll-2", "What is your favourite number?", l);
+		PdListBox lb2 = new PdListBox("poll-2", "What is your favourite number?", l);
 		lb2.setShortDescription("Vote");
 		lb2.setLongDescription("What is your favourite number?");
 		RootPanel.get("content").add(lb2);
 		
-		GuiUpload guiUpload = new GuiUpload("uploadsomething", "Upload");
+		PdUpload guiUpload = new PdUpload("uploadsomething", "Upload");
 		guiUpload.addActionListener(this);
 		
-		GuiDownload download = new GuiDownload("download", "Download", "http://teste");
+		PdDownload download = new PdDownload("download", "Download", "http://teste");
 		download.setLongDescription("Link to video Sherry Turkle: Connected, but alone?");
 	
 	}
