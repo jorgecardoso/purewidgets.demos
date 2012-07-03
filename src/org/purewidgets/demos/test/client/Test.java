@@ -59,7 +59,7 @@ public class Test implements PDApplicationLifeCycle, EntryPoint, ActionListener{
 		PdButton like2 = new PdButton("btn2", "Like");
 		like1.setLongDescription("Video of Sherry Turkle: Connected, but alone?");
 		
-		PdTextBox tb1 = new PdTextBox("txt1", "Send text");
+		PdTextBox tb1 = new PdTextBox("txt1", "Send text", null);
 		tb1.setLongDescription("Contribute some tags to the tag cloud.");
 		
 		ArrayList<String> l = new ArrayList<String>();

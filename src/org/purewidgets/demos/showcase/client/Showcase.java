@@ -32,9 +32,7 @@ public class Showcase implements PDApplicationLifeCycle, EntryPoint, ActionListe
 	
 	@Override
 	public void onModuleLoad() {
-		
 		PDApplication.load(this, "WidgetShowcase");
-		
 	}
 
 	@Override
@@ -44,9 +42,6 @@ public class Showcase implements PDApplicationLifeCycle, EntryPoint, ActionListe
 			//Admin.run();
 			return;
 		}
-		
-		
-		//WidgetManager.get().setAutomaticInputRequests(true);
 		
 		final TabPanel tabPanel = new TabPanel();
 		
@@ -62,32 +57,19 @@ public class Showcase implements PDApplicationLifeCycle, EntryPoint, ActionListe
 		PdButton like1 = new PdButton("btn1", "Like");
 		like1.getWidgetOptions().get(0).setSuggestedReferenceCode("myb");
 		like1.setLongDescription("Video of Everdith Landrau at TEDxFranklinStreet");
-		like1.addActionListener(new ActionListener() {
-
-			@Override
-			public void onAction(ActionEvent<?> e) {
-				/* Textbox */
-				FlowPanel textboxPanel = new FlowPanel();
-				tabPanel.add(textboxPanel, "TextBox");
-				Showcase.this.setPanelStyle(textboxPanel);
-				
-				PdTextBox tb1 = new PdTextBox("txt1", "Send text");
-				tb1.setWidth("400px");
-				tb1.setLongDescription("Contribute some tags to the tag cloud.");
-				textboxPanel.add(tb1);
-				
-			}});
-		/*
-		 * We made changes that need to be sent to the server
-		 */
-		like1.sendToServer();
 		buttonPanel.add(like1);
 		
-		//GuiButton like2 = new GuiButton("btn2", "Like");
-		//like1.setLongDescription("Video of Sherry Turkle: Connected, but alone?");
 		
+		/* Textbox */
+		FlowPanel textboxPanel = new FlowPanel();
+		tabPanel.add(textboxPanel, "TextBox");
+		Showcase.this.setPanelStyle(textboxPanel);
 		
-		
+		PdTextBox tb1 = new PdTextBox("txt1", "Send text", null);
+		tb1.setWidth("400px");
+		tb1.setLongDescription("Contribute some tags to the tag cloud.");
+		textboxPanel.add(tb1);
+			
 		
 		
 		/* listbox */
@@ -126,7 +108,11 @@ public class Showcase implements PDApplicationLifeCycle, EntryPoint, ActionListe
 		/*
 		 * Checkin
 		 */
+		FlowPanel checkinPanel = new FlowPanel();
+		tabPanel.add(checkinPanel, "Checkin");
+		this.setPanelStyle(checkinPanel);
 		PdCheckin checkin = new PdCheckin();
+		checkinPanel.add(checkin);
 		
 //		
 //		GuiDownloadButton download = new GuiDownloadButton("download", "Download", "http://teste");
