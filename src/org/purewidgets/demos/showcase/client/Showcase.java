@@ -43,6 +43,7 @@ public class Showcase implements PDApplicationLifeCycle, EntryPoint, ActionListe
 			return;
 		}
 		
+		
 		final TabPanel tabPanel = new TabPanel();
 		
 		tabPanel.addStyleName("main");
@@ -104,6 +105,7 @@ public class Showcase implements PDApplicationLifeCycle, EntryPoint, ActionListe
 		PdDownload guiDownload = new PdDownload("download-id", "Download", "http://jorge");
 		guiDownload.addActionListener(this);
 		downloadPanel.add(guiDownload);
+		org.purewidgets.demos.showcase.client.Resources.INSTANCE.css().ensureInjected();
 		
 		/*
 		 * Checkin
@@ -118,6 +120,7 @@ public class Showcase implements PDApplicationLifeCycle, EntryPoint, ActionListe
 //		GuiDownloadButton download = new GuiDownloadButton("download", "Download", "http://teste");
 //		download.setLongDescription("Link to video Sherry Turkle: Connected, but alone?");
 //	
+		
 	}
 
 	/**
