@@ -55,7 +55,9 @@ public class Showcase implements PDApplicationLifeCycle, EntryPoint, ActionListe
 		tabPanel.add(buttonPanel, "Button");
 		setPanelStyle(buttonPanel);
 		
-		PdButton like1 = new PdButton("btn1", "Like");
+		PdButton like1 = new PdButton("btn11", "Like");
+		
+		like1.getWidgetOptions().get(0).setIconUrl("http://cdn.macrumors.com/article/2010/09/03/145454-itunes_10_icon.jpg");
 		like1.getWidgetOptions().get(0).setSuggestedReferenceCode("myb");
 		like1.setLongDescription("Video of Everdith Landrau at TEDxFranklinStreet");
 		buttonPanel.add(like1);

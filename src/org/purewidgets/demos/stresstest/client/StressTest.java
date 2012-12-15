@@ -114,15 +114,25 @@ public class StressTest implements PDApplicationLifeCycle, EntryPoint{
 				timerAddDelete.scheduleRepeating(60000);
 				
 				
-				timerInput = new Timer() {
-					@Override
-					public void run() {
-						input();
-					}
-				};
-				timerInput.scheduleRepeating(10000);
+//				timerInput = new Timer() {
+//					@Override
+//					public void run() {
+//						input();
+//					}
+//				};
+//				timerInput.scheduleRepeating(10000);
 				addDelete();
 				
+				
+				new Timer() {
+					@Override
+					public void run() {
+						for ( PdWidget widget : widgets ) {
+							PdButton button = (PdButton) widget;
+							button.setCaption("test button" + Math.random());
+						}
+					}
+				}.scheduleRepeating(30000);
 		
 	}
 }

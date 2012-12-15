@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import org.purewidgets.client.application.PDApplication;
 import org.purewidgets.client.storage.ServerStorage;
 import org.purewidgets.shared.logging.Log;
+import org.purewidgets.shared.storage.KeyValue;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -73,7 +74,7 @@ public class Admin {
 	public static void loadOptions() {
 		
 		for (int i = 0; i < options.length;  i++) {
-			rs.getString(options[i],  new AsyncCallback<String[]>() {
+			rs.getString(options[i],  new AsyncCallback<KeyValue>() {
 
 				@Override
 				public void onFailure(Throwable caught) {
@@ -84,17 +85,17 @@ public class Admin {
 				}
 
 				@Override
-				public void onSuccess(String[] result) {
+				public void onSuccess(KeyValue result) {
 					
 					
 					for (int j = 0; j < options.length; j++) {
-						if ( options[j].equals(result[0]) ) {
+						if ( options[j].equals(result.getKey()) ) {
 							TextBox t = values.get(j);
-							t.setText(result[1]);
+							t.setText(result.getValue());
 									
 						}
 					}
-					Log.debug("ok:" + result[1]);
+					Log.debug("ok:" + result.getValue());
 					//RootPanel.get().add(new Label("ok: " + result));
 				}
 				

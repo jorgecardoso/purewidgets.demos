@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="com.google.gwt.eclipse.core.GWT_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/Users/jorge/Google Drive/PhD/Work/0-Code-EclipseWorkspace/PureWidgets System Apps/serverLibraries/jackson-all-1.8.2.jar"/>
-	<classpathentry kind="lib" path="/Users/jorge/Google Drive/PhD/Work/0-Code-EclipseWorkspace/PureWidgets System Apps/serverLibraries/objectify-3.0.1.jar"/>
+	<classpathentry kind="lib" path="/Users/jorge/Desktop/PhD-SourceCode/PuReWidgets Demos/serverLibraries/jackson-all-1.8.2.jar"/>
+	<classpathentry kind="lib" path="/Users/jorge/Desktop/PhD-SourceCode/PuReWidgets Demos/serverLibraries/objectify-3.0.1.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/purewidgets.jar"/>
-	<classpathentry kind="lib" path="/Users/jorge/Google Drive/PhD/Work/0-Code-EclipseWorkspace/PuReWidgets Demos/clientLibraries/gwt-gae-channel-0.4-alpha.jar"/>
-	<classpathentry kind="con" path="com.google.appengine.eclipse.core.GAE_CONTAINER/App Engine (2)"/>
+	<classpathentry kind="lib" path="/Users/jorge/Desktop/PhD-SourceCode/PuReWidgets Demos/clientLibraries/gwt-gae-channel-0.4-alpha.jar"/>
+	<classpathentry kind="lib" path="/Users/jorge/Desktop/PhD-SourceCode/PuReWidgets Demos/clientLibraries/gwt-voices-2.1.8.jar"/>
+	<classpathentry kind="con" path="com.google.appengine.eclipse.core.GAE_CONTAINER/App Engine (1)"/>
+	<classpathentry kind="con" path="com.google.gwt.eclipse.core.GWT_CONTAINER/GWT"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
