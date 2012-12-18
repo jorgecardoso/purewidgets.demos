@@ -36,7 +36,7 @@ public class StressTest implements PDApplicationLifeCycle, EntryPoint{
 	
 	ArrayList<PdWidget> widgets; 
 	
-	int widgetIdIndex;
+	int widgetIndex;
 	
 	@Override
 	public void onModuleLoad() {
@@ -48,11 +48,20 @@ public class StressTest implements PDApplicationLifeCycle, EntryPoint{
 	@Override
 	public void onPDApplicationLoaded(PDApplication pdApplication) {
 			
+			Integer wi = pdApplication.getLocalStorage().getInteger("widgetIndex");
+			widgetIndex = 0;
+			if ( null != wi ) {
+				widgetIndex = wi.intValue();
+			}
+			
+			
+			
+			
 				widgets = new ArrayList<PdWidget>();
 				
 				Log.debug(this, "Creating " + pdApplication.getParameterInt("numWidgets", 5) + " widgets.");
 				
-				for (int i = 0; i < pdApplication.getParameterInt("numWidgets", 5); i++) {
+				for (int i = widgetIndex; i < widgetIndex+ pdApplication.getParameterInt("numWidgets", 5); i++) {
 					
 					PdButton b = new PdButton("button "+i, "Button "+i);
 					b.setShortDescription("Test button " + i);
@@ -73,9 +82,27 @@ public class StressTest implements PDApplicationLifeCycle, EntryPoint{
 					}.schedule(i*15000);
 				}
 				
+				new Timer() {
+
+					@Override
+					public void run() {
+						delete( PDApplication.getCurrent().getParameterInt("numDelete", 1) );
+						
+					}
+					
+				}.schedule(25000);
 				
-				
+	}
+	
+	private void delete(int n) {
+		for ( int i = 0; i < n; i++ ) {
+			this.widgets.get(0).removeFromServer();
+			this.widgets.get(0).removeFromParent();
+			this.widgets.remove(0);
+		}
 		
+		this.widgetIndex += n;
+		PDApplication.getCurrent().getLocalStorage().setInt("widgetIndex", this.widgetIndex);
 	}
 	
 	private void input() {
@@ -120,29 +147,7 @@ public class StressTest implements PDApplicationLifeCycle, EntryPoint{
 		
 	}
 	
-	private void addDelete() {
-		/*
-		 * Delete all current widgets
-		 */
-		for ( PdWidget widget : widgets ) {
-			widget.removeFromServer();
-		}
-		
-		widgets.clear();
-		/*
-		 * Add new ones
-		 */
-		
-		for (int i = 0; i < 5; i++) {
-			
-			PdButton b = new PdButton("button "+widgetIdIndex, "Button "+widgetIdIndex);
-			b.setShortDescription("Test button " + widgetIdIndex);
-			widgetIdIndex++;
-			
-			widgets.add(b);
-		}
-		
-	}
+	
 
 	
 }
