@@ -2,6 +2,7 @@
 <module rename-to='test'>
 	<!-- Inherit the core Web Toolkit stuff. -->
 	<inherits name='com.google.gwt.user.User' />
+	<inherits name="com.google.gwt.i18n.I18N"/>
 
 	<!-- This is needed to allow UiBinder elements to have custom Ids -->
 	<inherits name="com.google.gwt.user.Debug"/>
