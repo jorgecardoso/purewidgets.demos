@@ -32,6 +32,11 @@ public class Test implements PDApplicationLifeCycle, EntryPoint, ActionListener{
 	
 	PDApplication pdApplication;
 	
+	PdDownload download;
+	PdListBox lb1;
+	PdTextBox tb1;
+	PdUpload guiUpload;
+	
 	@Override
 	public void onModuleLoad() {
 		
@@ -59,14 +64,14 @@ public class Test implements PDApplicationLifeCycle, EntryPoint, ActionListener{
 		PdButton like2 = new PdButton("btn2", "Like");
 		like1.setLongDescription("Video of Sherry Turkle: Connected, but alone?");
 		
-		PdTextBox tb1 = new PdTextBox("txt1", "Send text", null);
+	    tb1 = new PdTextBox("txt1", "Send text", null);
 		tb1.setLongDescription("Contribute some tags to the tag cloud.");
 		
 		ArrayList<String> l = new ArrayList<String>();
 		l.add("I don't go");
 		l.add("Once a week");
 		l.add("Twice a week");
-		PdListBox lb1 = new PdListBox("poll-1", "On average, how many times to you go to the movies?", l);
+		lb1 = new PdListBox("poll-1", "On average, how many times to you go to the movies?", l);
 		lb1.setShortDescription("Vote");
 		lb1.setLongDescription("On average, how many times to you go to the movies?");
 		RootPanel.get("content").add(lb1);
@@ -80,12 +85,13 @@ public class Test implements PDApplicationLifeCycle, EntryPoint, ActionListener{
 		lb2.setLongDescription("What is your favourite number?");
 		RootPanel.get("content").add(lb2);
 		
-		PdUpload guiUpload = new PdUpload("uploadsomething", "Upload");
+	    guiUpload = new PdUpload("uploadsomething", "Upload");
+	    RootPanel.get("content").add(guiUpload);
 		guiUpload.addActionListener(this);
 		
-		PdDownload download = new PdDownload("download", "Download", "http://teste");
+		download = new PdDownload("download", "Download", "http://teste");
 		download.setLongDescription("Link to video Sherry Turkle: Connected, but alone?");
-	
+		RootPanel.get("content").add(download);
 	}
 
 	@Override
@@ -94,6 +100,18 @@ public class Test implements PDApplicationLifeCycle, EntryPoint, ActionListener{
 		Image img = new Image((String)e.getParam());
 		RootPanel.get().add(img);
 		
+		//download.setUrl("http://jorgecardoso.eu");
+		lb1.setTitle("Testete etete");
+		
+		ArrayList<String> l = new ArrayList<String>();
+		l.add("I don't");
+		l.add("Once a week");
+		l.add("Twice a week");
+		lb1.setOptions(l);
+		
+		tb1.setCaption("Gimme text!");
+		
+		guiUpload.setCaption("new upload caption");
 	}
 	
 	
