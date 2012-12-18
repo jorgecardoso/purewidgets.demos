@@ -5,8 +5,10 @@ import java.util.Date;
 
 import org.purewidgets.client.application.PDApplication;
 import org.purewidgets.client.application.PDApplicationLifeCycle;
+import org.purewidgets.client.im.json.InputResponseJson;
 import org.purewidgets.client.widgets.PdButton;
 import org.purewidgets.client.widgets.PdWidget;
+import org.purewidgets.shared.im.WidgetInput;
 import org.purewidgets.shared.logging.Log;
 
 //
@@ -17,8 +19,10 @@ import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.user.client.Timer;
+import com.google.gwt.user.client.Window.Navigator;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.rpc.ServiceDefTarget;
+import com.google.gwt.user.client.ui.RootPanel;
 
 
 /**
@@ -37,41 +41,83 @@ public class StressTest implements PDApplicationLifeCycle, EntryPoint{
 	@Override
 	public void onModuleLoad() {
 		Date d = new Date();
-		String date = DateTimeFormat.getFormat("y-M-d:H:m:s").format(d);
 		
-		PDApplication.load(this, "StressTest-" + date);
+		PDApplication.load(this, "StressTest");
+	}
+	
+	@Override
+	public void onPDApplicationLoaded(PDApplication pdApplication) {
+			
+				widgets = new ArrayList<PdWidget>();
+				
+				Log.debug(this, "Creating " + pdApplication.getParameterInt("numWidgets", 5) + " widgets.");
+				
+				for (int i = 0; i < pdApplication.getParameterInt("numWidgets", 5); i++) {
+					
+					PdButton b = new PdButton("button "+i, "Button "+i);
+					b.setShortDescription("Test button " + i);
+					b.setLongDescription("This is a test button ");
+					RootPanel.get().add(b);
+					
+					widgets.add(b);
+				}
+				
+				
+				 
+				for ( int i = 0; i < pdApplication.getParameterInt("numInputs", 1); i++ ) {
+					new Timer() {
+						@Override
+						public void run() {
+							input();
+						}
+					}.schedule(i*15000);
+				}
+				
+				
+				
+		
 	}
 	
 	private void input() {
 		if (this.widgets.size() < 1 ) return;
 		Log.debug("Sending input");
-		//PlaceInteractionWebpage.sightingService.sighting(s, date, callback)
-		
-		DateTimeFormat dtf = DateTimeFormat.getFormat("yyyy-MM-dd'T'hh:mm:ss");
-		Date d = new Date();
-		//SightingReport.this.feedback.setText("Sending.");
 		
 		String user = "StressTest"+(int)(Math.random()*100);
-		
+
 		int randomIndex = (int) (Math.random()*this.widgets.size());
 		
-		String referenceCode = this.widgets.get(randomIndex).getWidgetOptions().get(0).getReferenceCode();
-		Log.debug("Sending input to reference code: " + referenceCode);
-//		sightingService.sighting(user + " tag."+ referenceCode, dtf.format(d), new AsyncCallback<Void>() {
-//
-//			@Override
-//			public void onFailure(Throwable caught) {
-//				Log.debug(this, "An error ocurred.");
-//				
-//			}
-//
-//			@Override
-//			public void onSuccess(Void result) {
-//				Log.debug(this, "Sent.");
-//				
-//			}
-//			
-//		});
+		ArrayList<String>parameters = new ArrayList<String>();
+		
+		WidgetInput widgetInput = new WidgetInput();
+		widgetInput.setUserId(user);
+		widgetInput.setNickname(user);
+		widgetInput.setInputMechanism("PlaceInteractionWebpage:"+Navigator.getUserAgent());
+		widgetInput.setParameters(parameters);
+		widgetInput.setWidgetId("button "+randomIndex);
+		widgetInput.setWidgetOptionId("button "+randomIndex);
+		widgetInput.setReferenceCode(this.widgets.get(randomIndex).getWidgetOptions().get(0).getReferenceCode());
+		
+		
+		PDApplication.getCurrent().getInteractionManager().sendWidgetInput(
+				PDApplication.getCurrent().getPlaceId(), 
+				PDApplication.getCurrent().getApplicationId(), 
+				PDApplication.getCurrent().getPlaceId(),
+				widgetInput, 
+				new AsyncCallback<InputResponseJson>() {
+
+					@Override
+					public void onSuccess(InputResponseJson returnValue) {
+						Log.debug(this, "Sent! " +returnValue);
+					}
+
+					@Override
+					public void onFailure(Throwable exception) {
+						Log.debug(this, "An error ocurred.");
+					}
+			
+		});		
+		
+		
 	}
 	
 	private void addDelete() {
@@ -98,41 +144,5 @@ public class StressTest implements PDApplicationLifeCycle, EntryPoint{
 		
 	}
 
-	@Override
-	public void onPDApplicationLoaded(PDApplication pdApplication) {
-			
-				widgets = new ArrayList<PdWidget>();
-				
-				widgetIdIndex = 0;
-				
-				timerAddDelete = new Timer() {
-					@Override
-					public void run() {
-						addDelete();
-					}
-				};
-				timerAddDelete.scheduleRepeating(60000);
-				
-				
-//				timerInput = new Timer() {
-//					@Override
-//					public void run() {
-//						input();
-//					}
-//				};
-//				timerInput.scheduleRepeating(10000);
-				addDelete();
-				
-				
-				new Timer() {
-					@Override
-					public void run() {
-						for ( PdWidget widget : widgets ) {
-							PdButton button = (PdButton) widget;
-							button.setCaption("test button" + Math.random());
-						}
-					}
-				}.scheduleRepeating(30000);
-		
-	}
+	
 }
