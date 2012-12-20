@@ -2,7 +2,12 @@ gwt-unitCache
 gwt-unitCache/*
 war/WEB-INF/lib
 war/WEB-INF/lib/*
-tmp
-tmp/*
+war/WEB-INF/deploy
+war/helloworld
+war/showcase
+war/stresstest
+war/test
+extra
+extra/*
 .settings
 .classpath
