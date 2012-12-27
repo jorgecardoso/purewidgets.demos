@@ -79,7 +79,7 @@ public class StressTest implements PDApplicationLifeCycle, EntryPoint{
 						public void run() {
 							input();
 						}
-					}.schedule(i*15000);
+					}.schedule(30000+i*10000);
 				}
 				
 				new Timer() {
@@ -90,7 +90,7 @@ public class StressTest implements PDApplicationLifeCycle, EntryPoint{
 						
 					}
 					
-				}.schedule(25000);
+				}.schedule(60000);
 				
 	}
 	
